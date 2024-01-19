@@ -1,0 +1,23 @@
+{
+	"modListVersion": 2,
+	"modList": [
+    {
+      "modid": "${modId}",
+      "name": "${modName}",
+      "description": "A Minecraft mod that lets you sit on slabs and stairs. ",
+      "version": "${modVersion}",
+      "mcversion": "${minecraftVersion}",
+      "url": "https://github.com/Pilzinsel64/sit",
+      "updateUrl": "",
+      "authorList": ["bl4ckscor3", "Pilzinsel64"],
+      "credits": "",
+      "logoFile": "",
+      "screenshots": [],
+      "parent": "",
+      "requiredMods": ["Forge"],
+      "dependencies": [],
+      "dependants": [],
+      "useDependencyInformation": true
+    }
+  ]
+}
