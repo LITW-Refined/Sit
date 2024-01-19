@@ -35,4 +35,5 @@
  */
 dependencies {
     implementation(rfg.deobf(fileTree(dir: 'libs/implementation', include: ['*.jar'])))
+    implementation("com.github.GTNewHorizons:CarpentersBlocks:3.5.1-GTNH:dev");
 }

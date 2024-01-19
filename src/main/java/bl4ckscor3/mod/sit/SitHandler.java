@@ -27,16 +27,41 @@ public class SitHandler {
                 if (!EntitySit.OCCUPIED.containsKey(p) && e.getHeldItem() == null) {
                     if (b instanceof BlockSlab) {
                         if ((w.getBlockMetadata(p.x, p.y, p.z) & 8) != 0) return;
-                    } else if (b instanceof BlockStairs) {
+                    }
+                    else if (b instanceof BlockStairs) {
                         if ((w.getBlockMetadata(p.x, p.y, p.z) & 4) != 0) return;
-                    } else if (Loader.isModLoaded("ImmersiveEngineering")
+                    }
+                    else if (Loader.isModLoaded("ImmersiveEngineering")
                         && b instanceof blusunrize.immersiveengineering.common.blocks.BlockIESlabs) {
                             TileEntity te = w.getTileEntity(event.x, event.y, event.z);
 
                             if ((te instanceof blusunrize.immersiveengineering.common.blocks.TileEntityIESlab)
                                 && ((blusunrize.immersiveengineering.common.blocks.TileEntityIESlab) te).slabType != 0)
                                 return;
-                        } else return;
+                    }
+                    else if (Loader.isModLoaded("CarpentersBlocks"))
+                    {
+                        if (b instanceof com.carpentersblocks.block.BlockCarpentersStairs)
+                        {
+                        }
+                        else if (b instanceof com.carpentersblocks.block.BlockCarpentersSlope)
+                        {
+                        }
+                        else if (b instanceof com.carpentersblocks.block.BlockCarpentersBlock)
+                        {
+                            TileEntity te = w.getTileEntity(event.x, event.y, event.z);
+
+                            if (te instanceof com.carpentersblocks.tileentity.TEBase)
+                            {
+                                com.carpentersblocks.tileentity.TEBase TE = (com.carpentersblocks.tileentity.TEBase)te;
+                                if (TE.getData() != com.carpentersblocks.data.Slab.SLAB_Y_NEG)
+                                    return;
+                            }
+                        }
+                        else
+                            return;
+                    }
+                    else return;
 
                     EntitySit sit = new EntitySit(w, p);
 
